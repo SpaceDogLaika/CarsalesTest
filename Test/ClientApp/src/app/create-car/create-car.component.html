@@ -1,0 +1,52 @@
+<div class="create-car-component">
+  <form class="create-car-form" [formGroup]="createCarForm">
+    <div class="input-field">
+      <div class="input-title">
+        Make:
+      </div>
+      <input class="make-input input" type="text" formControlName="make" autocomplete="off" />
+    </div>
+
+    <div class="input-field">
+      <div class="input-title">
+        Model:
+      </div>
+      <input class="model-input input" type="text" formControlName="model" autocomplete="off" />
+    </div>
+
+    <div class="input-field">
+      <div class="input-title">
+        Engine:
+      </div>
+      <input class="engine-input input" type="text" formControlName="engine" autocomplete="off" />
+    </div>
+    <div class="input-field">
+      <div class="input-title">
+        Doors:
+      </div>
+      <input type="number" class="doors-input input" formControlName="doors" autocomplete="off" />
+    </div>
+    <div class="input-field">
+      <div class="input-title">
+        Wheels:
+      </div>
+      <input type="number" class="wheels-input input" formControlName="wheels" autocomplete="off" />
+    </div>
+    <div class="input-field">
+      <div class="input-title">
+        Body Type:
+      </div>
+      <input class="bodyType-input input" type="text" formControlName="bodyType" autocomplete="off" />
+    </div>
+    <button class="submit-button" mat-stroked-button (click)="submit()">
+      Submit
+    </button>
+  </form>
+
+  <div class="error" *ngIf="failed">
+    One or more validation errors occured! Check the form.
+  </div>
+  <div class="submitted" *ngIf="submitted">
+    Car has been created!
+  </div>
+</div>

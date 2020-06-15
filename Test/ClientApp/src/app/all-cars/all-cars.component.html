@@ -1,0 +1,29 @@
+<h1 id="tableLabel">All cars</h1>
+
+
+<p *ngIf="!cars"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cars">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Engine</th>
+      <th>Doors</th>
+      <th>Wheels</th>
+      <th>Body Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{ car.id }}</td>
+      <td>{{ car.make }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.engine }}</td>
+      <td>{{ car.doors }}</td>
+      <td>{{ car.wheels }}</td>
+      <td>{{ car.bodyType }}</td>
+    </tr>
+  </tbody>
+</table>
