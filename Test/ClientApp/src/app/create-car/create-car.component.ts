@@ -67,8 +67,7 @@ export class CreateCarComponent implements OnInit {
       headers = headers.append('Content-Type', 'application/json');
       headers = headers.append('Accept', '*/*');
       this.car = this.createCarForm.value as Car;
-      let newId = Guid.create();
-      this.car.id = newId.value;
+      this.car.id = Guid.raw();
       this.car.vehicleType = VehicleTypeEnum.Car;
 
       this.http.post('https://localhost:44398/' + 'car', this.car, { headers: headers }).subscribe();
